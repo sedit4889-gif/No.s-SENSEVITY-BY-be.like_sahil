@@ -1535,3 +1535,97 @@ body {
         gap: 9px;
     }
 }
+/* =================================
+   STEP 10 — SENSITIVITY UPGRADE
+================================= */
+
+.settings-note {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 11px 13px;
+    margin-bottom: 25px;
+
+    border: 1px solid rgba(0,229,255,0.10);
+    border-radius: 8px;
+
+    background: rgba(0,229,255,0.025);
+
+    color: #6f7886;
+
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.settings-note span {
+    color: var(--cyan);
+    font-size: 14px;
+}
+
+.settings-actions {
+    display: grid;
+
+    grid-template-columns: 0.7fr 1.3fr;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.reset-button {
+    height: 45px;
+
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 9px;
+
+    background: rgba(255,255,255,0.035);
+
+    color: #858c98;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.reset-button:hover {
+    color: white;
+
+    border-color: rgba(255,255,255,0.2);
+
+    background: rgba(255,255,255,0.07);
+}
+
+.save-status {
+    margin-top: 12px;
+
+    text-align: center;
+
+    color: #4f5966;
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.save-status.success {
+    color: #55ffb0;
+
+    text-shadow:
+        0 0 12px rgba(85,255,176,0.3);
+}
+
+@media (max-width: 480px) {
+
+    .settings-actions {
+        grid-template-columns: 1fr;
+    }
+
+}
