@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>No.sメ — FF Optimizer</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+
+
+    <!-- LOGIN SCREEN -->
+
+    <main class="login-page">
+
+        <div class="login-card">
+
+            <div class="panel-logo">
+                No.sメ
+            </div>
+
+            <div class="panel-subtitle">
+                FREE FIRE MAX OPTIMIZER
+            </div>
+
+
+            <div class="status">
+                ● SYSTEM ONLINE
+            </div>
+
+
+            <h1>
+                Welcome Back
+            </h1>
+
+            <p class="login-text">
+                Login to access your optimizer panel.
+            </p>
+
+
+            <!-- Username -->
+
+            <div class="input-group">
+
+                <label>
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                    autocomplete="username"
+                >
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="input-group">
+
+                <label>
+                    Password
+                </label>
+
+                <div class="password-box">
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Enter password"
+                        autocomplete="current-password"
+                    >
+
+                    <button
+                        type="button"
+                        onclick="togglePassword()"
+                    >
+                        👁
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="login-button"
+                onclick="login()"
+            >
+                LOGIN
+                <span>→</span>
+            </button>
+
+
+            <div
+                class="login-message"
+                id="loginMessage"
+            ></div>
+
+
+            <div class="creator">
+
+                Created by
+                <strong>@be.like_sahil</strong>
+
+            </div>
+
+
+            <div class="version">
+                No.sメ • v1.0
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
