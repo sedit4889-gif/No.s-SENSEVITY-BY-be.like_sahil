@@ -488,243 +488,215 @@
 
 
         <!-- =========================
-             SETTINGS PANEL
-        ========================== -->
+     SENSITIVITY CONTROL CENTER
+========================= -->
 
-        <section
-            class="settings-panel"
-            id="settingsPanel"
+<section
+    class="settings-panel"
+    id="settingsPanel"
+>
+
+    <div class="settings-header">
+
+        <div>
+
+            <span class="small-label">
+                CONTROL CENTER
+            </span>
+
+            <h2>
+                🎯 Sensitivity Adjust
+            </h2>
+
+        </div>
+
+        <button
+            class="close-panel"
+            onclick="closeSettings()"
         >
-
-            <div class="settings-header">
-
-                <div>
-
-                    <span class="small-label">
-                        CONTROL CENTER
-                    </span>
-
-                    <h2>
-                        Sensitivity
-                    </h2>
-
-                </div>
-
-                <button
-                    class="close-panel"
-                    onclick="closeSettings()"
-                >
-                    ×
-                </button>
-
-            </div>
-
-
-            <!-- GENERAL -->
-
-            <div class="slider-row">
-
-                <div>
-
-                    <label>
-                        General
-                    </label>
-
-                    <span
-                        id="generalValue"
-                    >
-                        95
-                    </span>
-
-                </div>
-
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="95"
-                    id="generalSlider"
-                    oninput="updateSlider('general')"
-                >
-
-            </div>
-
-
-            <!-- RED DOT -->
-
-            <div class="slider-row">
-
-                <div>
-
-                    <label>
-                        Red Dot
-                    </label>
-
-                    <span
-                        id="redDotValue"
-                    >
-                        90
-                    </span>
-
-                </div>
-
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="90"
-                    id="redDotSlider"
-                    oninput="updateSlider('redDot')"
-                >
-
-            </div>
-
-
-            <!-- 2X -->
-
-            <div class="slider-row">
-
-                <div>
-
-                    <label>
-                        2× Scope
-                    </label>
-
-                    <span
-                        id="scope2Value"
-                    >
-                        85
-                    </span>
-
-                </div>
-
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="85"
-                    id="scope2Slider"
-                    oninput="updateSlider('scope2')"
-                >
-
-            </div>
-
-
-            <!-- 4X -->
-
-            <div class="slider-row">
-
-                <div>
-
-                    <label>
-                        4× Scope
-                    </label>
-
-                    <span
-                        id="scope4Value"
-                    >
-                        80
-                    </span>
-
-                </div>
-
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="80"
-                    id="scope4Slider"
-                    oninput="updateSlider('scope4')"
-                >
-
-            </div>
-
-
-            <!-- SNIPER -->
-
-            <div class="slider-row">
-
-                <div>
-
-                    <label>
-                        Sniper
-                    </label>
-
-                    <span
-                        id="sniperValue"
-                    >
-                        70
-                    </span>
-
-                </div>
-
-                <input
-                    type="range"
-                    min="0"
-                    max="100"
-                    value="70"
-                    id="sniperSlider"
-                    oninput="updateSlider('sniper')"
-                >
-
-            </div>
-
-
-            <button
-                class="save-button"
-                onclick="saveSettings()"
-            >
-                SAVE SETTINGS
-            </button>
-
-        </section>
-
-
-
-        <!-- DASHBOARD FOOTER -->
-
-        <footer class="dashboard-footer">
-
-            <span>
-                NO.Sメ
-            </span>
-
-            <span>
-                Created by @be.like_sahil
-            </span>
-
-            <span>
-                V1.0
-            </span>
-
-        </footer>
-
-    </main>
-
-
-
-    <!-- BOTTOM HUD -->
-
-    <div class="bottom-hud">
-
-        <span>
-            ● CONNECTION STABLE
-        </span>
-
-        <span>
-            NO.Sメ
-        </span>
-
-        <span>
-            2026
-        </span>
+            ×
+        </button>
 
     </div>
 
 
+    <div class="settings-note">
 
-    <script src="script.js"></script>
+        <span>⚡</span>
 
-</body>
+        Adjust the values according to
+        your device and personal control.
 
-</html>
+    </div>
+
+
+    <!-- GENERAL -->
+
+    <div class="slider-row">
+
+        <div>
+
+            <label>
+                GENERAL
+            </label>
+
+            <span id="generalValue">
+                95
+            </span>
+
+        </div>
+
+        <input
+            type="range"
+            min="0"
+            max="100"
+            value="95"
+            id="generalSlider"
+            oninput="updateSlider('general')"
+        >
+
+    </div>
+
+
+    <!-- RED DOT -->
+
+    <div class="slider-row">
+
+        <div>
+
+            <label>
+                RED DOT
+            </label>
+
+            <span id="redDotValue">
+                90
+            </span>
+
+        </div>
+
+        <input
+            type="range"
+            min="0"
+            max="100"
+            value="90"
+            id="redDotSlider"
+            oninput="updateSlider('redDot')"
+        >
+
+    </div>
+
+
+    <!-- 2X -->
+
+    <div class="slider-row">
+
+        <div>
+
+            <label>
+                2× SCOPE
+            </label>
+
+            <span id="scope2Value">
+                85
+            </span>
+
+        </div>
+
+        <input
+            type="range"
+            min="0"
+            max="100"
+            value="85"
+            id="scope2Slider"
+            oninput="updateSlider('scope2')"
+        >
+
+    </div>
+
+
+    <!-- 4X -->
+
+    <div class="slider-row">
+
+        <div>
+
+            <label>
+                4× SCOPE
+            </label>
+
+            <span id="scope4Value">
+                80
+            </span>
+
+        </div>
+
+        <input
+            type="range"
+            min="0"
+            max="100"
+            value="80"
+            id="scope4Slider"
+            oninput="updateSlider('scope4')"
+        >
+
+    </div>
+
+
+    <!-- SNIPER -->
+
+    <div class="slider-row">
+
+        <div>
+
+            <label>
+                SNIPER
+            </label>
+
+            <span id="sniperValue">
+                70
+            </span>
+
+        </div>
+
+        <input
+            type="range"
+            min="0"
+            max="100"
+            value="70"
+            id="sniperSlider"
+            oninput="updateSlider('sniper')"
+        >
+
+    </div>
+
+
+    <!-- BUTTONS -->
+
+    <div class="settings-actions">
+
+        <button
+            class="reset-button"
+            onclick="resetSettings()"
+        >
+            ↻ RESET
+        </button>
+
+
+        <button
+            class="save-button"
+            onclick="saveSettings()"
+        >
+            ✓ SAVE SETTINGS
+        </button>
+
+    </div>
+
+
+    <div
+        class="save-status"
+        id="saveStatus"
+    >
+        SETTINGS READY
+    </div>
+
+</section>
