@@ -10,7 +10,12 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>No.sメ — FF Optimizer</title>
+    <title>No.sメ — FF MAX Optimizer</title>
+
+    <meta
+        name="description"
+        content="No.sメ — Free Fire Max Optimizer Panel"
+    >
 
     <link rel="stylesheet" href="style.css">
 
@@ -19,66 +24,180 @@
 
 <body>
 
+
+    <!-- =========================
+         FUTURISTIC BACKGROUND
+    ========================== -->
+
+    <div class="grid-background"></div>
+
     <div class="background-glow glow-one"></div>
+
     <div class="background-glow glow-two"></div>
 
+    <div class="scan-line"></div>
 
-    <!-- LOGIN SCREEN -->
+
+
+    <!-- =========================
+         TOP HUD
+    ========================== -->
+
+    <div class="top-hud">
+
+        <div class="hud-left">
+            NO.Sメ // SYSTEM
+        </div>
+
+        <div class="hud-right">
+            V1.0
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         LOGIN PAGE
+    ========================== -->
 
     <main class="login-page">
 
-        <div class="login-card">
 
-            <div class="panel-logo">
-                No.sメ
-            </div>
+        <!-- LEFT SIDE -->
 
-            <div class="panel-subtitle">
-                FREE FIRE MAX OPTIMIZER
-            </div>
+        <section class="intro-section">
 
-
-            <div class="status">
-                ● SYSTEM ONLINE
+            <div class="mini-badge">
+                ⚡ OPTIMIZER PANEL
             </div>
 
 
             <h1>
-                Welcome Back
+
+                NO.S<span>メ</span>
+
             </h1>
 
-            <p class="login-text">
-                Login to access your optimizer panel.
+
+            <h2>
+                FREE FIRE MAX
+                <br>
+                OPTIMIZER
+            </h2>
+
+
+            <p>
+                Tune your gaming setup.
+                Improve your settings.
+                Play your way.
             </p>
 
 
-            <!-- Username -->
+            <!-- Feature badges -->
 
-            <div class="input-group">
+            <div class="feature-row">
 
-                <label>
-                    Username
-                </label>
+                <div class="feature">
+                    🎯 AIM
+                </div>
 
-                <input
-                    type="text"
-                    id="username"
-                    placeholder="Enter username"
-                    autocomplete="username"
-                >
+                <div class="feature">
+                    🔥 HEADSHOT
+                </div>
+
+                <div class="feature">
+                    ⚡ FPS
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- RIGHT LOGIN CARD -->
+
+        <section class="login-card">
+
+
+            <div class="login-header">
+
+                <div class="login-icon">
+                    🔐
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        ACCESS PANEL
+                    </h3>
+
+                    <p>
+                        Authorized users only
+                    </p>
+
+                </div>
 
             </div>
 
 
-            <!-- Password -->
+
+            <!-- SYSTEM STATUS -->
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+                SYSTEM ONLINE
+
+                <span class="status-line"></span>
+
+            </div>
+
+
+
+            <!-- USERNAME -->
 
             <div class="input-group">
 
                 <label>
-                    Password
+                    USERNAME
                 </label>
 
-                <div class="password-box">
+                <div class="input-box">
+
+                    <span>
+                        👤
+                    </span>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter username"
+                        autocomplete="username"
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="input-group">
+
+                <label>
+                    PASSWORD
+                </label>
+
+                <div class="input-box">
+
+                    <span>
+                        🔑
+                    </span>
 
                     <input
                         type="password"
@@ -90,6 +209,7 @@
                     <button
                         type="button"
                         onclick="togglePassword()"
+                        class="eye-button"
                     >
                         👁
                     </button>
@@ -99,14 +219,27 @@
             </div>
 
 
+
+            <!-- LOGIN -->
+
             <button
                 class="login-button"
                 onclick="login()"
             >
-                LOGIN
-                <span>→</span>
+
+                <span>
+                    ACCESS PANEL
+                </span>
+
+                <b>
+                    →
+                </b>
+
             </button>
 
+
+
+            <!-- MESSAGE -->
 
             <div
                 class="login-message"
@@ -114,21 +247,67 @@
             ></div>
 
 
+
+            <!-- SECURITY -->
+
+            <div class="security-info">
+
+                <span>🛡</span>
+
+                Secure session
+
+                <span>•</span>
+
+                Private access
+
+            </div>
+
+
+
+            <!-- CREATOR -->
+
             <div class="creator">
 
-                Created by
-                <strong>@be.like_sahil</strong>
+                CREATED BY
+
+                <strong>
+                    @be.like_sahil
+                </strong>
 
             </div>
 
 
             <div class="version">
-                No.sメ • v1.0
+                NO.Sメ • OPTIMIZER V1.0
             </div>
 
-        </div>
+
+        </section>
 
     </main>
+
+
+
+    <!-- =========================
+         BOTTOM HUD
+    ========================== -->
+
+    <div class="bottom-hud">
+
+        <span>
+            ● CONNECTION STABLE
+        </span>
+
+        <span>
+            NO.Sメ
+        </span>
+
+        <span>
+            2026
+        </span>
+
+    </div>
+
 
 
     <script src="script.js"></script>
