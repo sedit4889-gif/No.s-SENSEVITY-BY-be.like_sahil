@@ -12,11 +12,6 @@
 
     <title>No.sメ — FF MAX Optimizer</title>
 
-    <meta
-        name="description"
-        content="No.sメ — Free Fire Max Optimizer Panel"
-    >
-
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -25,9 +20,7 @@
 <body>
 
 
-    <!-- =========================
-         FUTURISTIC BACKGROUND
-    ========================== -->
+    <!-- BACKGROUND -->
 
     <div class="grid-background"></div>
 
@@ -38,10 +31,7 @@
     <div class="scan-line"></div>
 
 
-
-    <!-- =========================
-         TOP HUD
-    ========================== -->
+    <!-- TOP HUD -->
 
     <div class="top-hud">
 
@@ -61,10 +51,10 @@
          LOGIN PAGE
     ========================== -->
 
-    <main class="login-page">
-
-
-        <!-- LEFT SIDE -->
+    <main
+        class="login-page"
+        id="loginPage"
+    >
 
         <section class="intro-section">
 
@@ -72,13 +62,9 @@
                 ⚡ OPTIMIZER PANEL
             </div>
 
-
             <h1>
-
                 NO.S<span>メ</span>
-
             </h1>
-
 
             <h2>
                 FREE FIRE MAX
@@ -86,15 +72,11 @@
                 OPTIMIZER
             </h2>
 
-
             <p>
                 Tune your gaming setup.
                 Improve your settings.
                 Play your way.
             </p>
-
-
-            <!-- Feature badges -->
 
             <div class="feature-row">
 
@@ -116,17 +98,15 @@
 
 
 
-        <!-- RIGHT LOGIN CARD -->
+        <!-- LOGIN CARD -->
 
         <section class="login-card">
-
 
             <div class="login-header">
 
                 <div class="login-icon">
                     🔐
                 </div>
-
 
                 <div>
 
@@ -143,9 +123,6 @@
             </div>
 
 
-
-            <!-- SYSTEM STATUS -->
-
             <div class="system-status">
 
                 <span class="status-dot"></span>
@@ -155,7 +132,6 @@
                 <span class="status-line"></span>
 
             </div>
-
 
 
             <!-- USERNAME -->
@@ -168,9 +144,7 @@
 
                 <div class="input-box">
 
-                    <span>
-                        👤
-                    </span>
+                    <span>👤</span>
 
                     <input
                         type="text"
@@ -184,7 +158,6 @@
             </div>
 
 
-
             <!-- PASSWORD -->
 
             <div class="input-group">
@@ -195,9 +168,7 @@
 
                 <div class="input-box">
 
-                    <span>
-                        🔑
-                    </span>
+                    <span>🔑</span>
 
                     <input
                         type="password"
@@ -219,9 +190,6 @@
             </div>
 
 
-
-            <!-- LOGIN -->
-
             <button
                 class="login-button"
                 onclick="login()"
@@ -231,24 +199,16 @@
                     ACCESS PANEL
                 </span>
 
-                <b>
-                    →
-                </b>
+                <b>→</b>
 
             </button>
 
-
-
-            <!-- MESSAGE -->
 
             <div
                 class="login-message"
                 id="loginMessage"
             ></div>
 
-
-
-            <!-- SECURITY -->
 
             <div class="security-info">
 
@@ -262,9 +222,6 @@
 
             </div>
 
-
-
-            <!-- CREATOR -->
 
             <div class="creator">
 
@@ -281,7 +238,6 @@
                 NO.Sメ • OPTIMIZER V1.0
             </div>
 
-
         </section>
 
     </main>
@@ -289,8 +245,465 @@
 
 
     <!-- =========================
-         BOTTOM HUD
+         OPTIMIZER DASHBOARD
     ========================== -->
+
+    <main
+        class="dashboard"
+        id="dashboard"
+        style="display:none;"
+    >
+
+
+        <!-- DASHBOARD HEADER -->
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <div class="dashboard-brand">
+                    NO.Sメ
+                </div>
+
+                <div class="dashboard-title">
+                    OPTIMIZER CONTROL
+                </div>
+
+            </div>
+
+
+            <div class="online-badge">
+
+                <span class="status-dot"></span>
+
+                ONLINE
+
+            </div>
+
+        </div>
+
+
+
+        <!-- WELCOME -->
+
+        <section class="welcome-card">
+
+            <div>
+
+                <span class="small-label">
+                    PLAYER PROFILE
+                </span>
+
+                <h2>
+                    Welcome,
+                    <span id="playerName">
+                        SAHIL
+                    </span>
+                </h2>
+
+                <p>
+                    Your gaming optimization panel is ready.
+                </p>
+
+            </div>
+
+            <div class="profile-icon">
+                🎮
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================
+             OPTIMIZER CARDS
+        ========================== -->
+
+        <section class="optimizer-grid">
+
+
+            <!-- SENSITIVITY -->
+
+            <div class="optimizer-card">
+
+                <div class="card-icon">
+                    🎯
+                </div>
+
+                <h3>
+                    Sensitivity Adjust
+                </h3>
+
+                <p>
+                    Tune your personal sensitivity values.
+                </p>
+
+                <button
+                    class="panel-button"
+                    onclick="showSensitivity()"
+                >
+                    OPEN SETTINGS →
+                </button>
+
+            </div>
+
+
+
+            <!-- HEADSHOT -->
+
+            <div class="optimizer-card">
+
+                <div class="card-icon">
+                    🔥
+                </div>
+
+                <h3>
+                    Headshot Preset
+                </h3>
+
+                <p>
+                    View a balanced headshot-oriented preset.
+                </p>
+
+                <button
+                    class="panel-button"
+                    onclick="showHeadshot()"
+                >
+                    VIEW PRESET →
+                </button>
+
+            </div>
+
+
+
+            <!-- NO RECOIL -->
+
+            <div class="optimizer-card">
+
+                <div class="card-icon">
+                    🎮
+                </div>
+
+                <h3>
+                    No-Recoil Guide
+                </h3>
+
+                <p>
+                    Learn safe in-game control techniques.
+                </p>
+
+                <button
+                    class="panel-button"
+                    onclick="showNoRecoil()"
+                >
+                    OPEN GUIDE →
+                </button>
+
+            </div>
+
+
+
+            <!-- ANTI LAG -->
+
+            <div class="optimizer-card">
+
+                <div class="card-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Anti-Lag Guide
+                </h3>
+
+                <p>
+                    Optimize device and game performance.
+                </p>
+
+                <button
+                    class="panel-button"
+                    onclick="showAntiLag()"
+                >
+                    OPTIMIZE →
+                </button>
+
+            </div>
+
+
+
+            <!-- DPI -->
+
+            <div class="optimizer-card">
+
+                <div class="card-icon">
+                    📱
+                </div>
+
+                <h3>
+                    DPI Calculator
+                </h3>
+
+                <p>
+                    Calculate a comfortable touch setup.
+                </p>
+
+                <button
+                    class="panel-button"
+                    onclick="showDPI()"
+                >
+                    CALCULATE →
+                </button>
+
+            </div>
+
+
+
+            <!-- LAUNCHER -->
+
+            <div class="optimizer-card launch-card">
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Free Fire MAX
+                </h3>
+
+                <p>
+                    Try opening the installed game.
+                </p>
+
+                <button
+                    class="panel-button launch-button"
+                    onclick="openFreeFire()"
+                >
+                    OPEN GAME →
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             SETTINGS PANEL
+        ========================== -->
+
+        <section
+            class="settings-panel"
+            id="settingsPanel"
+        >
+
+            <div class="settings-header">
+
+                <div>
+
+                    <span class="small-label">
+                        CONTROL CENTER
+                    </span>
+
+                    <h2>
+                        Sensitivity
+                    </h2>
+
+                </div>
+
+                <button
+                    class="close-panel"
+                    onclick="closeSettings()"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <!-- GENERAL -->
+
+            <div class="slider-row">
+
+                <div>
+
+                    <label>
+                        General
+                    </label>
+
+                    <span
+                        id="generalValue"
+                    >
+                        95
+                    </span>
+
+                </div>
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="95"
+                    id="generalSlider"
+                    oninput="updateSlider('general')"
+                >
+
+            </div>
+
+
+            <!-- RED DOT -->
+
+            <div class="slider-row">
+
+                <div>
+
+                    <label>
+                        Red Dot
+                    </label>
+
+                    <span
+                        id="redDotValue"
+                    >
+                        90
+                    </span>
+
+                </div>
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="90"
+                    id="redDotSlider"
+                    oninput="updateSlider('redDot')"
+                >
+
+            </div>
+
+
+            <!-- 2X -->
+
+            <div class="slider-row">
+
+                <div>
+
+                    <label>
+                        2× Scope
+                    </label>
+
+                    <span
+                        id="scope2Value"
+                    >
+                        85
+                    </span>
+
+                </div>
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="85"
+                    id="scope2Slider"
+                    oninput="updateSlider('scope2')"
+                >
+
+            </div>
+
+
+            <!-- 4X -->
+
+            <div class="slider-row">
+
+                <div>
+
+                    <label>
+                        4× Scope
+                    </label>
+
+                    <span
+                        id="scope4Value"
+                    >
+                        80
+                    </span>
+
+                </div>
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="80"
+                    id="scope4Slider"
+                    oninput="updateSlider('scope4')"
+                >
+
+            </div>
+
+
+            <!-- SNIPER -->
+
+            <div class="slider-row">
+
+                <div>
+
+                    <label>
+                        Sniper
+                    </label>
+
+                    <span
+                        id="sniperValue"
+                    >
+                        70
+                    </span>
+
+                </div>
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="70"
+                    id="sniperSlider"
+                    oninput="updateSlider('sniper')"
+                >
+
+            </div>
+
+
+            <button
+                class="save-button"
+                onclick="saveSettings()"
+            >
+                SAVE SETTINGS
+            </button>
+
+        </section>
+
+
+
+        <!-- DASHBOARD FOOTER -->
+
+        <footer class="dashboard-footer">
+
+            <span>
+                NO.Sメ
+            </span>
+
+            <span>
+                Created by @be.like_sahil
+            </span>
+
+            <span>
+                V1.0
+            </span>
+
+        </footer>
+
+    </main>
+
+
+
+    <!-- BOTTOM HUD -->
 
     <div class="bottom-hud">
 
