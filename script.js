@@ -1,19 +1,14 @@
 // ==========================================
-// NO.Sメ — OPTIMIZER PANEL
+// NO.Sメ OPTIMIZER
 // ==========================================
-
-
-// ================================
-// DEMO LOGIN
-// ================================
 
 const correctUsername = "SAHIL";
 const correctPassword = "123456";
 
 
-// ================================
-// SHOW / HIDE PASSWORD
-// ================================
+// ==========================================
+// PASSWORD TOGGLE
+// ==========================================
 
 function togglePassword() {
 
@@ -26,22 +21,20 @@ function togglePassword() {
     if (password.type === "password") {
 
         password.type = "text";
-
         button.textContent = "🙈";
 
     } else {
 
         password.type = "password";
-
         button.textContent = "👁";
 
     }
 }
 
 
-// ================================
+// ==========================================
 // LOGIN
-// ================================
+// ==========================================
 
 function login() {
 
@@ -58,7 +51,7 @@ function login() {
     if (!username || !password) {
 
         message.textContent =
-            "⚠ Please enter username and password.";
+            "⚠ PLEASE ENTER USERNAME AND PASSWORD";
 
         message.style.color =
             "#ffb84d";
@@ -79,8 +72,12 @@ function login() {
             "#55ffb0";
 
 
-        document.getElementById("playerName").textContent =
-            username;
+        const playerName =
+            document.getElementById("playerName");
+
+        if (playerName) {
+            playerName.textContent = username;
+        }
 
 
         setTimeout(() => {
@@ -91,18 +88,15 @@ function login() {
             document.getElementById("dashboard").style.display =
                 "block";
 
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+            window.scrollTo(0, 0);
 
-        }, 500);
+        }, 400);
 
 
     } else {
 
         message.textContent =
-            "✕ ACCESS DENIED — Invalid credentials.";
+            "✕ ACCESS DENIED — INVALID CREDENTIALS";
 
         message.style.color =
             "#ff5c7a";
@@ -112,14 +106,16 @@ function login() {
 }
 
 
-// ================================
+// ==========================================
 // SENSITIVITY PANEL
-// ================================
+// ==========================================
 
 function showSensitivity() {
 
     const panel =
         document.getElementById("settingsPanel");
+
+    if (!panel) return;
 
     panel.classList.add("active");
 
@@ -131,22 +127,27 @@ function showSensitivity() {
 }
 
 
-// ================================
+// ==========================================
 // CLOSE SETTINGS
-// ================================
+// ==========================================
 
 function closeSettings() {
 
-    document
-        .getElementById("settingsPanel")
-        .classList.remove("active");
+    const panel =
+        document.getElementById("settingsPanel");
+
+    if (panel) {
+
+        panel.classList.remove("active");
+
+    }
 
 }
 
 
-// ================================
-// SLIDER UPDATE
-// ================================
+// ==========================================
+// SLIDER
+// ==========================================
 
 function updateSlider(type) {
 
@@ -169,6 +170,10 @@ function updateSlider(type) {
 
 }
 
+
+// ==========================================
+// SAVE SETTINGS
+// ==========================================
 
 function saveSettings() {
 
@@ -202,264 +207,28 @@ function saveSettings() {
         document.getElementById("saveStatus");
 
 
-    status.textContent =
-        "✓ SETTINGS SAVED SUCCESSFULLY";
-
-    status.classList.add("success");
-
-
-    setTimeout(() => {
+    if (status) {
 
         status.textContent =
-            "SETTINGS READY";
+            "✓ SETTINGS SAVED SUCCESSFULLY";
 
-        status.classList.remove("success");
-
-    }, 2500);
-
-}
+        status.classList.add("success");
 
 
-// ================================
-// LOAD SAVED SETTINGS
-// ================================
+        setTimeout(() => {
 
-function loadSettings() {
+            status.textContent =
+                "SETTINGS READY";
 
-    const saved =
-        localStorage.getItem("nosSettings");
+            status.classList.remove("success");
 
-    if (!saved) return;
+        }, 2500);
 
-
-    const settings =
-        JSON.parse(saved);
-
-
-    const fields = [
-        "general",
-        "redDot",
-        "scope2",
-        "scope4",
-        "sniper"
-    ];
-
-
-    fields.forEach(type => {
-
-        const slider =
-            document.getElementById(
-                type + "Slider"
-            );
-
-        const value =
-            document.getElementById(
-                type + "Value"
-            );
-
-
-        if (
-            slider &&
-            value &&
-            settings[type] !== undefined
-        ) {
-
-            slider.value =
-                settings[type];
-
-            value.textContent =
-                settings[type];
-
-        }
-
-    });
-
-}
-
-
-// ================================
-// HEADSHOT PRESET
-// ================================
-
-function showHeadshot() {
-
-    alert(
-        "🔥 HEADSHOT PRESET\n\n" +
-        "General: 95\n" +
-        "Red Dot: 90\n" +
-        "2× Scope: 85\n" +
-        "4× Scope: 80\n" +
-        "Sniper: 70\n\n" +
-        "Use these as a starting point " +
-        "and adjust according to your device."
-    );
-
-}
-
-
-// ================================
-// NO RECOIL GUIDE
-// ================================
-
-function showNoRecoil() {
-
-    alert(
-        "🎮 NO-RECOIL GUIDE\n\n" +
-        "• Use a comfortable sensitivity\n" +
-        "• Practice controlled drag movement\n" +
-        "• Avoid extreme sensitivity values\n" +
-        "• Test settings in training mode\n\n" +
-        "This guide does not modify game files."
-    );
-
-}
-
-
-// ================================
-// ANTI-LAG GUIDE
-// ================================
-
-function showAntiLag() {
-
-    alert(
-        "⚡ ANTI-LAG GUIDE\n\n" +
-        "✓ Close unnecessary background apps\n" +
-        "✓ Keep sufficient storage free\n" +
-        "✓ Use a stable internet connection\n" +
-        "✓ Avoid overheating your device\n" +
-        "✓ Keep the game updated\n\n" +
-        "No game files are modified."
-    );
-
-}
-
-
-// ================================
-// DPI CALCULATOR
-// ================================
-
-function showDPI() {
-
-    const dpi =
-        prompt(
-            "📱 Enter your current device DPI:"
-        );
-
-
-    if (!dpi) return;
-
-
-    const number =
-        Number(dpi);
-
-
-    if (
-        Number.isNaN(number) ||
-        number <= 0
-    ) {
-
-        alert(
-            "Please enter a valid DPI number."
-        );
-
-        return;
     }
 
-
-    const recommended =
-        Math.round(
-            Math.max(
-                360,
-                Math.min(
-                    600,
-                    number
-                )
-            )
-        );
-
-
-    alert(
-        "📱 DPI RESULT\n\n" +
-        "Your DPI: " + number + "\n" +
-        "Comfort range suggestion: " +
-        recommended +
-        "\n\n" +
-        "This is only a general reference. " +
-        "Device settings vary."
-    );
-
 }
 
 
-// ================================
-// OPEN FREE FIRE MAX
-// ================================
-
-function openFreeFire() {
-
-    /*
-       Android browsers may allow an app
-       deep-link only when the installed app
-       supports that scheme.
-
-       This does NOT modify the game.
-    */
-
-    const appLink =
-        "freefiremax://";
-
-
-    window.location.href =
-        appLink;
-
-
-    setTimeout(() => {
-
-        alert(
-            "If Free Fire MAX did not open, " +
-            "open it normally from your device."
-        );
-
-    }, 1800);
-
-}
-
-
-// ================================
-// ENTER KEY LOGIN
-// ================================
-
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.key === "Enter" &&
-            document
-                .getElementById("loginPage")
-                .style.display !== "none"
-        ) {
-
-            login();
-
-        }
-
-    }
-);
-
-
-// ================================
-// STARTUP
-// ================================
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function() {
-
-        loadSettings();
-
-    }
-);
 // ==========================================
 // RESET SETTINGS
 // ==========================================
@@ -512,19 +281,232 @@ function resetSettings() {
         document.getElementById("saveStatus");
 
 
-    status.textContent =
-        "↻ SETTINGS RESET";
+    if (status) {
 
-    status.classList.add("success");
+        status.textContent =
+            "↻ SETTINGS RESET";
+
+        status.classList.add("success");
+
+
+        setTimeout(() => {
+
+            status.textContent =
+                "SETTINGS READY";
+
+            status.classList.remove("success");
+
+        }, 2000);
+
+    }
+
+}
+
+
+// ==========================================
+// LOAD SETTINGS
+// ==========================================
+
+function loadSettings() {
+
+    const saved =
+        localStorage.getItem("nosSettings");
+
+    if (!saved) return;
+
+
+    try {
+
+        const settings =
+            JSON.parse(saved);
+
+
+        Object.keys(settings).forEach(type => {
+
+            const slider =
+                document.getElementById(
+                    type + "Slider"
+                );
+
+            const value =
+                document.getElementById(
+                    type + "Value"
+                );
+
+
+            if (slider && value) {
+
+                slider.value =
+                    settings[type];
+
+                value.textContent =
+                    settings[type];
+
+            }
+
+        });
+
+    } catch (error) {
+
+        localStorage.removeItem(
+            "nosSettings"
+        );
+
+    }
+
+}
+
+
+// ==========================================
+// HEADSHOT PRESET
+// ==========================================
+
+function showHeadshot() {
+
+    alert(
+        "🔥 HEADSHOT PRESET\n\n" +
+        "General: 95\n" +
+        "Red Dot: 90\n" +
+        "2× Scope: 85\n" +
+        "4× Scope: 80\n" +
+        "Sniper: 70\n\n" +
+        "Use these as a starting point."
+    );
+
+}
+
+
+// ==========================================
+// NO RECOIL GUIDE
+// ==========================================
+
+function showNoRecoil() {
+
+    alert(
+        "🎮 NO-RECOIL GUIDE\n\n" +
+        "• Use comfortable sensitivity\n" +
+        "• Practice controlled movement\n" +
+        "• Test settings in training mode\n" +
+        "• Avoid extreme sensitivity values\n\n" +
+        "No game files are modified."
+    );
+
+}
+
+
+// ==========================================
+// ANTI-LAG
+// ==========================================
+
+function showAntiLag() {
+
+    alert(
+        "⚡ ANTI-LAG GUIDE\n\n" +
+        "✓ Close unnecessary background apps\n" +
+        "✓ Keep storage free\n" +
+        "✓ Use stable internet\n" +
+        "✓ Avoid device overheating\n" +
+        "✓ Keep the game updated"
+    );
+
+}
+
+
+// ==========================================
+// DPI
+// ==========================================
+
+function showDPI() {
+
+    const dpi =
+        prompt(
+            "📱 Enter your current device DPI:"
+        );
+
+
+    if (!dpi) return;
+
+
+    const number =
+        Number(dpi);
+
+
+    if (
+        Number.isNaN(number) ||
+        number <= 0
+    ) {
+
+        alert(
+            "Please enter a valid DPI."
+        );
+
+        return;
+    }
+
+
+    alert(
+        "📱 DPI RESULT\n\n" +
+        "Your DPI: " + number +
+        "\n\n" +
+        "Use a comfortable value for your device."
+    );
+
+}
+
+
+// ==========================================
+// FREE FIRE MAX LAUNCHER
+// ==========================================
+
+function openFreeFire() {
+
+    window.location.href =
+        "freefiremax://";
 
 
     setTimeout(() => {
 
-        status.textContent =
-            "SETTINGS READY";
+        alert(
+            "If the game did not open, " +
+            "launch Free Fire MAX normally."
+        );
 
-        status.classList.remove("success");
-
-    }, 2000);
+    }, 1800);
 
 }
+
+
+// ==========================================
+// ENTER KEY
+// ==========================================
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Enter" &&
+            document.getElementById("loginPage") &&
+            document.getElementById("loginPage").style.display !== "none"
+        ) {
+
+            login();
+
+        }
+
+    }
+);
+
+
+// ==========================================
+// START
+// ==========================================
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function() {
+
+        loadSettings();
+
+    }
+);
