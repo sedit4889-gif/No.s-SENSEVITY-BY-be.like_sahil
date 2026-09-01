@@ -170,10 +170,6 @@ function updateSlider(type) {
 }
 
 
-// ================================
-// SAVE SETTINGS
-// ================================
-
 function saveSettings() {
 
     const settings = {
@@ -202,9 +198,24 @@ function saveSettings() {
     );
 
 
-    alert(
-        "✓ Settings saved successfully!"
-    );
+    const status =
+        document.getElementById("saveStatus");
+
+
+    status.textContent =
+        "✓ SETTINGS SAVED SUCCESSFULLY";
+
+    status.classList.add("success");
+
+
+    setTimeout(() => {
+
+        status.textContent =
+            "SETTINGS READY";
+
+        status.classList.remove("success");
+
+    }, 2500);
 
 }
 
@@ -449,3 +460,71 @@ document.addEventListener(
 
     }
 );
+// ==========================================
+// RESET SETTINGS
+// ==========================================
+
+function resetSettings() {
+
+    const defaults = {
+
+        general: 95,
+        redDot: 90,
+        scope2: 85,
+        scope4: 80,
+        sniper: 70
+
+    };
+
+
+    Object.keys(defaults).forEach(type => {
+
+        const slider =
+            document.getElementById(
+                type + "Slider"
+            );
+
+        const value =
+            document.getElementById(
+                type + "Value"
+            );
+
+
+        if (slider && value) {
+
+            slider.value =
+                defaults[type];
+
+            value.textContent =
+                defaults[type];
+
+        }
+
+    });
+
+
+    localStorage.removeItem(
+        "nosSettings"
+    );
+
+
+    const status =
+        document.getElementById("saveStatus");
+
+
+    status.textContent =
+        "↻ SETTINGS RESET";
+
+    status.classList.add("success");
+
+
+    setTimeout(() => {
+
+        status.textContent =
+            "SETTINGS READY";
+
+        status.classList.remove("success");
+
+    }, 2000);
+
+}
